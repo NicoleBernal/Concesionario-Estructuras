@@ -1,0 +1,3 @@
+D:/Concesionario-Estructuras/cmake-build-debug/CMakeFiles/Concesionario_Estructuras.dir
+D:/Concesionario-Estructuras/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Concesionario-Estructuras/cmake-build-debug/CMakeFiles/rebuild_cache.dir
