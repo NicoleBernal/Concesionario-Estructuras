@@ -4,11 +4,15 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Modelo.cpp"
+#include "Year.cpp"
 
 using namespace std;
 class Marca
 {
+private:
+    string nomMarca;
+    Marca *sig;
+    Year *inicio;
 public:
     Marca(string);
     ~Marca();
@@ -16,16 +20,11 @@ public:
     string getNomMarca();
     void setSig(Marca *);
     Marca *getSig();
-    void SetInicio(Modelo *);
-    Modelo *getInicio();
-    void insertarModelo(string);
+    void SetInicio(Year *);
+    Year *getInicio();
+    void insertarYear(int);
+    //void insertarModelo(int);
 
-
-
-private:
-    string nomMarca;
-    Marca *sig;
-    Modelo *inicio;
 
 };
 

@@ -1,4 +1,5 @@
 #include "Marca.h"
+
 using namespace std;
 Marca::Marca(string nom)
 {
@@ -17,7 +18,7 @@ void Marca::setNomMarca(string nom){
 }
 
 string Marca::getNomMarca(){
-    return nomMarca;
+    return this->nomMarca;
 }
 void Marca::setSig(Marca *marca){
     this->sig=marca;
@@ -25,17 +26,34 @@ void Marca::setSig(Marca *marca){
 Marca *Marca::getSig(){
     return this->sig;
 }
-void Marca::SetInicio(Modelo *mod){
+void Marca::SetInicio(Year *mod){
     this->inicio=mod;
 }
-Modelo *Marca::getInicio(){
+Year *Marca::getInicio(){
     return inicio;
 }
-void Marca::insertarModelo(string mod){
-    Modelo *nuevo=new Modelo(mod);
+void Marca::insertarYear(int mod){
+    Year *nuevo=new Year(mod);
     if (this->inicio==NULL)
     {
         this->SetInicio(nuevo);
+    } else{
+        Year *aux = this->inicio;
+        Year *ant = NULL;
+        while (aux != NULL && aux->getInfo() <= mod){
+            ant = aux;
+            aux = aux->getSig();
+        }
+        if (aux == NULL){
+            ant->setSig(nuevo);
+        }else if (ant == NULL){
+            nuevo->setSig(inicio);
+            inicio = nuevo;
+        }else {
+            nuevo->setSig(aux);
+            ant->setSig(nuevo);
+
+        }
     }
     
 }

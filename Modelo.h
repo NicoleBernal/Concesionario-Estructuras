@@ -1,17 +1,31 @@
-#ifndef MODELO_H
-#define MODELO_H
+#ifndef CONCESIONARIO_ESTRUCTURAS_MODELO_H
+#define CONCESIONARIO_ESTRUCTURAS_MODELO_H
+#include <iostream>
+#include "string"
+using namespace std;
 
-#pragma once
-#include "Caracteristicas.cpp"
-
-class Modelo
-{
-public:
-    Modelo(string);
-    ~Modelo();
+class Modelo {
 
 private:
-
+    Modelo *sig{};
+    string nombre;
+    int cilindraje;
+    long precio;
+    int galones;
+    string color;
+    string combustible;
+public:
+    Modelo(string,int,long,int,string,string);
+    ~Modelo();
+    void setSig(Modelo *);
+    Modelo *getSig();
+    string getNombre();
+    int getCilidraje();
+    long getPrecio();
+    int getGalones();
+    string getColor();
+    string getCombustible();
 };
 
-#endif
+
+#endif //CONCESIONARIO_ESTRUCTURAS_MODELO_H
